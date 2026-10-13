@@ -1,0 +1,23 @@
+
+BASE: ['../base_stage1.yaml', '../student/s4_interp_then_refine_efficient.yaml']
+
+MODEL:
+  NAME: ES-RV-M-s4-interp-then-refine-efficient
+  BACKBONE: repvit_m1_1
+
+OUTPUT: output/up_channels_first_simple_efficient_samples4
+TAG: default
+
+DATA:
+  IMG_SIZE: 1008
+  DATA_PATH: data/SA-1B-1P
+  BATCH_SIZE: 4
+  NUM_SAMPLES: 4
+SAVE_FREQ: 500
+
+TRAIN:
+  EPOCHS: 1000
+  # Training scales LR by batch_size * world_size / 512; batch size 1 gives an effective 1e-3 with one process.
+  BASE_LR: 0.112
+  WARMUP_LR: 0.000256
+  MIN_LR: 0.00256

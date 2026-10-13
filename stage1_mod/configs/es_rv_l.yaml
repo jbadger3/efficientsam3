@@ -1,0 +1,10 @@
+BASE: ['base_stage1.yaml']
+
+MODEL:
+  NAME: ES-RV-L
+  BACKBONE: repvit_m2_3
+
+OUTPUT: output/stage1/es_rv_l
+TAG: default
+
+

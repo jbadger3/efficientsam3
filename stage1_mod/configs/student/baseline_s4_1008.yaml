@@ -1,0 +1,7 @@
+# Original head: final feature map -> conv head -> bilinear resize to 72x72, at the original SAM3 resolution.
+DATA:
+  IMG_SIZE: 1008
+
+MODEL:
+  STUDENT:
+    HEAD: baseline_s4

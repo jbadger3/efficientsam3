@@ -1,0 +1,7 @@
+# Stride-16 features with a 1x1 projection; 1152 / 16 = 72 matches the teacher grid.
+DATA:
+  IMG_SIZE: 1152
+
+MODEL:
+  STUDENT:
+    HEAD: s3_only

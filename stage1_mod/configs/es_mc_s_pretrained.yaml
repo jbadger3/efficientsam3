@@ -1,0 +1,8 @@
+BASE: ['es_mc_s.yaml']
+
+MODEL:
+  NAME: EfficientSAM3_Text_S0_Pretrained
+  PRETRAINED: 'checkpoints/mobileclip/mobileclip_s0.pt'
+
+OUTPUT: output/stage1_text/mobileclip_s0_pretrained
+TAG: text_ctx16_pretrained

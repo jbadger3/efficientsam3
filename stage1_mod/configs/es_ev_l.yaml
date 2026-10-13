@@ -1,0 +1,10 @@
+BASE: ['base_stage1.yaml']
+
+MODEL:
+  NAME: ES-EV-L
+  BACKBONE: efficientvit_b2
+
+OUTPUT: output/stage1/es_ev_l
+TAG: default
+
+

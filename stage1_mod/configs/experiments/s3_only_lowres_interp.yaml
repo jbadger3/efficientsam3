@@ -1,0 +1,10 @@
+BASE: ['../base_stage1.yaml', '../student/interp_s4_1008.yaml']
+
+DATA:
+  IMG_SIZE: 1008
+
+MODEL:
+  NAME: ES-RV-M-baseline
+  BACKBONE: repvit_m1_1
+  STUDENT:
+    HEAD: s3only_lowres_interp

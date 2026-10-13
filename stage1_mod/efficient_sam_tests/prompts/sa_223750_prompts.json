@@ -1,0 +1,14 @@
+{
+    "image_name": "sa_223750.jpg",
+    "tests": [
+        {
+            "id": "prompt1",
+            "prompts": [
+                {
+                    "type": "text",
+                    "data": "person"
+                }
+            ]
+        }
+    ]
+}

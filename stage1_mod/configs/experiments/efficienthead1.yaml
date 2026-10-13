@@ -1,0 +1,25 @@
+BASE: ['../base_stage1.yaml']
+
+DATA:
+  IMG_SIZE: 1008
+  DATA_PATH: data/SA-1B-1P
+  BATCH_SIZE: 4
+  NUM_SAMPLES: 4
+
+MODEL:
+  NAME: EfficientHead1
+  BACKBONE: repvit_m1_1
+  STUDENT:
+    HEAD: efficient_head
+    CONV_LAYERS: 2
+    CONV_TYPE: depthwise_separable
+
+TRAIN:
+  EPOCHS: 1000
+  # Training scales LR by batch_size * world_size / 512; batch size 4 gives an effective 1e-3.
+  BASE_LR: 0.128
+  WARMUP_LR: 0.000128
+  MIN_LR: 0.00128
+
+SAVE_FREQ: 500
+OUTPUT: output/efficienthead1_samples4

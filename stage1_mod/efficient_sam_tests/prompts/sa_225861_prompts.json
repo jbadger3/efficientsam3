@@ -1,0 +1,14 @@
+{
+    "image_name": "sa_225861.jpg",
+    "tests": [
+        {
+            "id": "prompt1",
+            "prompts": [
+                {
+                    "type": "text",
+                    "data": "sky"
+                }
+            ]
+        }
+    ]
+}

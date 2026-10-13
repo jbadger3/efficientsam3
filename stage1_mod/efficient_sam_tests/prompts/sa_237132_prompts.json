@@ -1,0 +1,14 @@
+{
+    "image_name": "sa_237132.jpg",
+    "tests": [
+        {
+            "id": "prompt1",
+            "prompts": [
+                {
+                    "type": "text",
+                    "data": "castle"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+BASE: ['base_stage1.yaml']
+
+MODEL:
+  NAME: ES-TV-S
+  BACKBONE: tiny_vit_5m
+
+OUTPUT: output/stage1/es_tv_s
+TAG: default
+
+

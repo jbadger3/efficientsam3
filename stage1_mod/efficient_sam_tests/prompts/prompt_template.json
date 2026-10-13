@@ -1,0 +1,19 @@
+{
+    "image_name": "test_image.jpg",
+    "tests": [
+        {
+            "id": "prompt1",
+            "prompts": [
+                {
+                    "type": "text",
+                    "data": "cat"
+                },
+                {
+                    "type": "box",
+                    "data": [200, 250, 300, 350],
+                    "label": 0
+                }
+            ]
+        }
+    ]
+}

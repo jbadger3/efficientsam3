@@ -1,0 +1,7 @@
+# Stride-16/32 fusion with bilinear resizing to 72x72; works at the original SAM3 resolution.
+DATA:
+  IMG_SIZE: 1008
+
+MODEL:
+  STUDENT:
+    HEAD: resample_fusion_s3s4

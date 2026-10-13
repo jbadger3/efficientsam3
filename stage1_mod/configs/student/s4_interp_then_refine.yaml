@@ -1,0 +1,6 @@
+DATA:
+  IMG_SIZE: 1008
+
+MODEL:
+  STUDENT:
+    HEAD: s4_interp_then_refine

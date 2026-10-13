@@ -1,0 +1,9 @@
+# Stride-16 features with a 1x1 projection; needs 1152x1152 input so the s3 grid is 72x72.
+BASE: ['../base_stage1.yaml', '../student/s4_interp_then_refine.yaml']
+
+MODEL:
+  NAME: ES-RV-M-s3-only
+  BACKBONE: repvit_m1_1
+
+OUTPUT: output/stage1_mod/s3_only
+TAG: default

@@ -1,0 +1,8 @@
+BASE: ['base_stage1.yaml', 'student/interp_s4_1008.yaml']
+
+MODEL:
+  NAME: ES-RV-M
+  BACKBONE: repvit_m1_1
+
+OUTPUT: output/stage1/es_rv_m_1008
+TAG: default

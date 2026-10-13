@@ -1,0 +1,7 @@
+# Stride-16 + stride-32 fusion; 1152 / 16 = 72 matches the teacher grid.
+DATA:
+  IMG_SIZE: 1152
+
+MODEL:
+  STUDENT:
+    HEAD: fusion_s3s4
