@@ -44,6 +44,20 @@ Optionally verify the saved embeddings against a fresh teacher forward pass by a
 
 The effective learning rate is `TRAIN.BASE_LR * batch_size * num_gpus / 512` (same for `WARMUP_LR` and `MIN_LR`). With batch size 1 on one GPU, `BASE_LR 5.12` gives an effective LR of 1e-2.
 
+To avoid storing teacher embeddings, train directly from images. This runs the frozen SAM3 ViT for every training batch and loads its weights from `sam3_checkpoints/sam3/sam3.pt`:
+
+```bash
+CUDA_VISIBLE_DEVICES=0 PYTHONPATH=. python -m torch.distributed.run --standalone --nnodes=1 --nproc_per_node=1 \
+  stage1_mod/train_image_encoder_from_images_stage1.py \
+  --cfg stage1_mod/configs/experiments/efficienthead1_sa-1b-1p.yaml \
+  --data-path data/SA-1B-1P \
+  --output output/efficienthead1_from_images \
+  --batch-size 4 \
+  --opts TRAIN.BASE_LR 0.128
+```
+
+The batch size is a starting point; lower it if the teacher and student together exceed available GPU memory. This mode avoids the embedding files but recomputes teacher features on every epoch.
+
 Single-image overfit test (RepViT-M):
 
 ```bash

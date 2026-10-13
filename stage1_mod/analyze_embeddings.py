@@ -228,7 +228,7 @@ def parse_args():
         "--num_samples",
         dest="num_samples",
         type=int,
-        default=None,
+        default=4,
         help="Number of samples to load (default: DATA.NUM_SAMPLES from the experiment config)",
     )
     parser.add_argument(
@@ -246,8 +246,8 @@ def main():
 
     model = load_student(config, checkpoint_path, args.device)
     print(f"Loaded student with {sum(p.numel() for p in model.parameters()):,} parameters")
-
-    num_samples = args.num_samples if args.num_samples is not None else config.DATA.NUM_SAMPLES
+    num_config_samples = config.DATA.NUM_SAMPLES
+    num_samples = args.num_samples if args.num_samples <= num_config_samples else num_config_samples
     dataset, data_loader = build_data_loader(config, num_samples)
     print(f"Dataset: {len(dataset)} samples, {len(data_loader)} batches (batch size {config.DATA.BATCH_SIZE})")
     analyze(config, model, data_loader, args.output_dir, args.device)
